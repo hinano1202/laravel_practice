@@ -17,25 +17,37 @@
             @endif
             
             <div class="form-group row">
-                <rabel class="col-md-2">氏名</rabel>
+                <label class="col-md-2">氏名</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" name="name" value="{{old('name')}}">
                     </div>
             </div>
             <div class="form-group row">
-                <rabel class="col-md-2">性別</rabel>
-                <div class="col-md-10">
-                   <input type="text" class="form-control" name="gender" value="{{old('gender')}}"> 
+                <label class="col-md-2">性別</label>
+                <div class="col-md-10" id="gender-choose">
+                   <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="gender1a" >
+                        <label class="form-check-label" for="gender1a">男性</label>
                     </div>
-                </div>
+                    <div class="form-check">
+                       <input class="form-check-input" type="radio" name="gender" id="gender2a">
+                       <label class="form-check-label" for="gender2a">女性</label>
+                    </div>
+                    <div class="form-check">    
+                        <input class="form-check-input" type="radio" name="gender" id="gender3a">
+                        <label class="form-check-label" for="gender3a">無回答</label>
+                    </div>    
+                   </div>
+                    </div>
+               
             <div class="form-group row">
-                <rabel class="col-md-2">趣味</rabel>
+                <label class="col-md-2">趣味</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" name="hobby" value="{{old('hobby')}}">
                 </div>
                 </div>
             <div class="form-group row">
-                <rabel class="col-md-2">自己紹介</rabel>
+                <label class="col-md-2">自己<br>紹介</label>
                 <div class="col-md-10">
                     <textarea class="form-control" name="introduction" rows="10">{{old('introduction')}}</textarea>
                 </div>

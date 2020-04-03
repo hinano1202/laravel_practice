@@ -17,19 +17,19 @@
             @endif
             
                  <div class="form-group row">
-                    <rabel class="col-md-2">タイトル</rabel>
+                    <label class="col-md-2">タイトル</label>
                     <div class="col-md-10">
                         <input type="text" class="form-control" name="title" value="{{old('title')}}">
                    </div>
                  </div>
                  <div class="form-group row">
-                        <rabel class="col-md-2">本文</rabel>
+                        <label class="col-md-2">本文</label>
                         <div class="col-md-10">
                         <textarea class="form-control" name="body" rows="20">{{ old('body')}}</textarea>
                          </div>
                  </div>
                 <div class="form-group row">
-                    <rabel class="col-md-2">画像</rabel>
+                    <label class="col-md-2">画像</label>
                     <div class="col-md-10">
                         <input type="file" class="form-control-file" name="image">
                     </div>
