@@ -46,7 +46,7 @@ public function create(Request $request){
     $news->save();
     //保存
     
-    return redirect('admin/news/create');
+    return redirect('admin/news/');
 }
 
 public function index(Request $request){

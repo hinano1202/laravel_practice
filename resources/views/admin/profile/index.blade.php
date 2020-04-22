@@ -1,5 +1,5 @@
 @extends('layouts.profile')
-@section('title','MYプロフィール')
+@section('title','現在のプロフィール')
 
 @section('content')
 <div class="container">
@@ -29,6 +29,16 @@
                     </tr>
                 </table>
                 
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-5 mx-auto">
+                    <h2>編集履歴</h2>
+                    @if($late_log != null)
+                    @foreach($late_log as $latest)
+                    <li class="list-group-item">{{ $latest->edit_at }}</li>
+                    @endforeach
+                    @endif
+                </div>
             </div>
             </div>
         </div>

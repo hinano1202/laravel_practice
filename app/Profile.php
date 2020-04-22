@@ -17,4 +17,8 @@ class Profile extends Model
         'introduction' => 'required'
         );
     
+    public function proflog(){
+        return $this->hasMany('App\Proflog');
+    }
+    
 }

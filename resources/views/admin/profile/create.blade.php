@@ -26,15 +26,15 @@
                 <label class="col-md-2">性別</label>
                 <div class="col-md-10" id="gender-choose">
                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gender" id="gender1a" >
+                        <input class="form-check-input" type="radio" name="gender" id="gender1a" value="male" >
                         <label class="form-check-label" for="gender1a">男性</label>
                     </div>
                     <div class="form-check">
-                       <input class="form-check-input" type="radio" name="gender" id="gender2a">
+                       <input class="form-check-input" type="radio" name="gender" id="gender2a" value="female">
                        <label class="form-check-label" for="gender2a">女性</label>
                     </div>
                     <div class="form-check">    
-                        <input class="form-check-input" type="radio" name="gender" id="gender3a">
+                        <input class="form-check-input" type="radio" name="gender" id="gender3a" value="none">
                         <label class="form-check-label" for="gender3a">無回答</label>
                     </div>    
                    </div>

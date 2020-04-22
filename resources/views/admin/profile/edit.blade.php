@@ -19,22 +19,22 @@
             <div class="form-group row">
                 <label class="col-md-2">氏名</label>
                 <div class="col-md-10">
-                    <input type="text" class="form-control" name="name" value="">
+                    <input type="text" class="form-control" name="name" value="{{$profile_now->name}}">
                     </div>
             </div>
             <div class="form-group row">
                 <label class="col-md-2">性別</label>
                 <div class="col-md-10" id="gender-choose">
                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gender" id="gender1a" >
+                        <input class="form-check-input" type="radio" name="gender" id="gender1a" value="male" {{ $profile_now->gender == 'male' ? 'checked' : '' }}>
                         <label class="form-check-label" for="gender1a">男性</label>
                     </div>
                     <div class="form-check">
-                       <input class="form-check-input" type="radio" name="gender" id="gender2a">
+                       <input class="form-check-input" type="radio" name="gender" id="gender2a" value="female" {{ $profile_now->gender == 'female' ? 'checked' : ' '}}>
                        <label class="form-check-label" for="gender2a">女性</label>
                     </div>
                     <div class="form-check">    
-                        <input class="form-check-input" type="radio" name="gender" id="gender3a">
+                        <input class="form-check-input" type="radio" name="gender" id="gender3a" value="none" {{ $profile_now->gender == 'none' ? 'checked' : ' '}}>
                         <label class="form-check-label" for="gender3a">無回答</label>
                     </div>    
                    </div>
@@ -43,13 +43,13 @@
             <div class="form-group row">
                 <label class="col-md-2">趣味</label>
                 <div class="col-md-10">
-                    <input type="text" class="form-control" name="hobby" value="{{old('hobby')}}">
+                    <input type="text" class="form-control" name="hobby" value="{{ $profile_now->hobby}}">
                 </div>
                 </div>
             <div class="form-group row">
                 <label class="col-md-2">自己<br>紹介</label>
                 <div class="col-md-10">
-                    <textarea class="form-control" name="introduction" rows="10">{{old('introduction')}}</textarea>
+                    <textarea class="form-control" name="introduction" rows="10">{{ $profile_now->introduction}}</textarea>
                 </div>
                 </div>
                 {{csrf_field()}}

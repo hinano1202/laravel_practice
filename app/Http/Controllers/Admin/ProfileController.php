@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Profile;
+use App\Proflog;
+use Carbon\Carbon;
 
 class ProfileController extends Controller
 {
@@ -31,12 +33,23 @@ class ProfileController extends Controller
         //profileモデルから、最新の1つだけを取得
         $latest_prof = Profile::latest()->first();
         
-        return view('admin.profile.index');
+        if($latest_prof->gender == 'male'){
+            $latest_prof->gender = "男性";
+        } else if($latest_prof->gender == 'female'){
+            $latest_prof->gender = "女性";
+        } else {
+            $latest_prof->gender = "無回答";
+        }
+        
+       $late_log = Proflog::latest()->get();
+     
+        
+        return view('admin.profile.index',['latest_prof'=>$latest_prof,'late_log'=>$late_log]);
     }
     
     public function edit(){
-        $latest_prof = Profile::first();
-        return view('admin.profile.edit');
+        $profile_now = Profile::latest()->first();
+        return view('admin.profile.edit',['profile_now'=>$profile_now]);
     }
     
     public function update(Request $request){
@@ -49,6 +62,10 @@ class ProfileController extends Controller
         
         $profile->fill($form);
         $profile->save();
+        
+         $proflog = new Proflog;
+        $proflog->edit_at = Carbon::now();
+        $proflog->save();
         
         return redirect('admin/profile/');
         
