@@ -1,7 +1,7 @@
 body {
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #000;
+  background-color: black;
   color: #fff;
 }
 
@@ -39,14 +39,7 @@ body {
   background-color: rgba(0, 0, 0, 0.25);
 }
 
-li{
-  text-align:right;
+#gender-choose {
+  display: flex;
 }
 
-#gender-choose{
-  display:flex;
-}
-
-.form-check{
-  margin-right:10px;
-}

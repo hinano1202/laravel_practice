@@ -83,7 +83,7 @@ public function update(Request $request){
         //画像が削除されている場合は何もなし
         $news_form['image_path'] = 'null';
     } elseif($request->file('image')){
-        //画像がリクエストされた（更新された）場合は保存して新しい画像のパスを反映
+        //画��がリクエストされた（更新された）場合は保存して新しい画像のパスを反映
         $path = $request->file('image')->store('public/image');
         $news_form['image_path'] = basename('path');
     } else {
